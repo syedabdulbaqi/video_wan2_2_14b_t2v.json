@@ -14,3 +14,8 @@ RUN comfy model download --url https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_
 
 # copy all input data (like images or videos) into comfyui (uncomment and adjust if needed)
 # COPY input/ /comfyui/input/
+
+# install VideoHelperSuite (required for CreateVideo / SaveVideo / MP4)
+RUN mkdir -p /comfyui/custom_nodes && \
+    cd /comfyui/custom_nodes && \
+    git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git
